@@ -6,7 +6,7 @@ class TitleValidator < ActiveModel::EachValidator
           return true
         end
         valid_titles.each do |valid_title|
-          if !value.nil? && value.include? valid_title
+          if !value.nil? && (value.include? valid_title)
              return true
           end
         end
