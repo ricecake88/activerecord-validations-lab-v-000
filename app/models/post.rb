@@ -8,7 +8,7 @@ class TitleValidator < ActiveModel::EachValidator
         valid_titles.each do |valid_title|
           if value.include? valid_title
             binding.pry
-              true
+             return true
           end
         end
         record.errors[attribute] << "is not valid"        
