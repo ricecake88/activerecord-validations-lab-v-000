@@ -4,7 +4,7 @@ class TitleValidator < ActiveModel::EachValidator
         if !(/Top \d+/.match(value)).nil?
           true
         end
-        valid_titles.each |valid_title|
+        valid_titles.each do |valid_title|
           if value.include?valid_title
               true
           else
