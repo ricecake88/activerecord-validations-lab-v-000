@@ -5,7 +5,7 @@ class TitleValidator < ActiveModel::EachValidator
           true
         end
         valid_titles.each do |valid_title|
-          if value.include?valid_title
+          if value.include? valid_title
               true
           else
             record.errors[attribute] << "is not valid"
