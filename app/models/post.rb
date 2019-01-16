@@ -17,7 +17,7 @@ end
 
 class Post < ActiveRecord::Base
     validates_with TitleValidator
-    validates :title, title: true
+    validates :title, presence: true
     validates :summary, presence: true, length: {maximum: 250}
     validates :content, presence: true, length: {minimum: 250}
     validates :category, inclusion: { in: %w(Fiction Non-Fiction) }
