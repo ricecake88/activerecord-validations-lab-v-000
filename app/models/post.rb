@@ -16,8 +16,7 @@ class TitleValidator < ActiveModel::EachValidator
 end
 
 class Post < ActiveRecord::Base
-    validates_presence_of :title
-    validates :title, presence: true, title: true
+    validates :title, title: true
     validates :summary, presence: true, length: {maximum: 250}
     validates :content, presence: true, length: {minimum: 250}
     validates :category, inclusion: { in: %w(Fiction Non-Fiction) }
