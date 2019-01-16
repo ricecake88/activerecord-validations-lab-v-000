@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'sunspot_rails'
 gem 'rails', '4.2'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
