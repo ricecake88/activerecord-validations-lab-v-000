@@ -3,7 +3,7 @@ class TitleValidator < ActiveModel::EachValidator
     def validate_each(record, attribute, value)
         valid_titles = ["Won't Believe", "Secret", "Guess"]
         if !(/Top \d+/.match(value)).nil?
-          true
+          return true
         end
         valid_titles.each do |valid_title|
           if value.include? valid_title
@@ -12,7 +12,7 @@ class TitleValidator < ActiveModel::EachValidator
           end
         end
         record.errors[attribute] << "is not valid"        
-        false
+        return false
     end
 end
 
