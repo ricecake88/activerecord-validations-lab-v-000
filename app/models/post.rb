@@ -1,6 +1,5 @@
 class TitleValidator < ActiveModel::EachValidator
     def validate_each(record, attribute, value)
-      binding.pry
         valid_titles = ["Won't Believe", "Secret", "Guess"]
         if !(/Top \d+/.match(value)).nil?
           true
@@ -17,7 +16,7 @@ class TitleValidator < ActiveModel::EachValidator
 end
 
 class Post < ActiveRecord::Base
-    validates :title, presence: true
+    validates_with TitleValidator
     validates :summary, presence: true, length: {maximum: 250}
     validates :content, presence: true, length: {minimum: 250}
     validates :category, inclusion: { in: %w(Fiction Non-Fiction) }
