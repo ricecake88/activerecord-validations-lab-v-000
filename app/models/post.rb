@@ -11,9 +11,9 @@ class TitleValidator < ActiveModel::EachValidator
               true
           else
             record.errors[attribute] << "is not valid"
-            false
           end
         end
+        false
     end
 end
 
