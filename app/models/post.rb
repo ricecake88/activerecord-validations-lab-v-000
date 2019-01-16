@@ -8,7 +8,6 @@ class TitleValidator < ActiveModel::EachValidator
         end
         valid_titles.each do |valid_title|
           if value.include? valid_title
-            binding.pry
              return true
           end
         end
