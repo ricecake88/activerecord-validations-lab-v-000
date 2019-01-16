@@ -1,5 +1,7 @@
 class TitleValidator < ActiveModel::EachValidator
+
     def validate_each(record, attribute, value)
+        binding.pry      
         valid_titles = ["Won't Believe", "Secret", "Guess"]
         if !(/Top \d+/.match(value)).nil?
           true
