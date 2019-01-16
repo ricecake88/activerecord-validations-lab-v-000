@@ -17,7 +17,7 @@ end
 
 class Post < ActiveRecord::Base
     validates_presence_of :title
-    validates :title, presence: true, allow_nil: false, allow_blank: false, title: true
+    validates :title, presence: true, title: true
     validates :summary, presence: true, length: {maximum: 250}
     validates :content, presence: true, length: {minimum: 250}
     validates :category, inclusion: { in: %w(Fiction Non-Fiction) }
